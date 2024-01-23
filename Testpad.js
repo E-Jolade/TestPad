@@ -1,3 +1,5 @@
+/* 1/23 Daily Byte Problem. Reverse String */ 
+
 var reverseString = function(s) {
     let reverse = [];
     for(let i = s.length; i >= 0; i--){
@@ -8,6 +10,4 @@ var reverseString = function(s) {
     return reverse;
 };
 
-console.log(reverseString("Cat"));
-console.log(reverseString("The Daily Byte"));
-console.log(reverseString("civic"));
+//console.log(reverseString("The Daily Byte"));
