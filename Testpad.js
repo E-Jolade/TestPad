@@ -27,4 +27,31 @@ let isPalindrome = function(s) {
     return true;
 };
 
-console.log(isPalindrome("A man, a plan, a canal: Panama."))
+//console.log(isPalindrome("A man, a plan, a canal: Panama."))
+
+/* 1/25 Daily Byte Problem. Vacuum Cleaner Route*/
+
+let vacuumCleaner = function(route){
+    let leftRight = 0;
+    let upDown = 0;
+    if(route.length % 2 !== 0){
+        return false;
+    }
+    for(let i = 0; i < route.length; i++){
+        if(route.charAt(i) === "L" || route.charAt(i) === "R"){
+            leftRight++;
+        }
+        else if(route.charAt(i) === "U" || route.charAt(i) === "D"){
+            upDown++;
+        }
+    }
+    if(leftRight % 2 === 0 && upDown % 2 === 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+
+};
+
+console.log(vacuumCleaner("RUULLDRD"));
