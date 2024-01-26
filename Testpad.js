@@ -54,4 +54,39 @@ let vacuumCleaner = function(route){
 
 };
 
-console.log(vacuumCleaner("RUULLDRD"));
+//console.log(vacuumCleaner("RUULLDRD"));
+
+/* 1/26 Daily Byte Problem. Correct Capitalization*/
+
+let correctCapital = function(cap){
+    let correct = true;
+
+    if(cap.charAt(0) === cap.charAt(0).toLowerCase()){
+        for(let i = 0; i < cap.length; i++){
+            if(cap.charAt(i) !== cap.charAt(i).toLowerCase()){
+                correct = false;
+                console.log("not all lower")
+            }
+        }
+    }
+    
+    else if(cap.charAt(0) === cap.charAt(0).toUpperCase()){
+        for(let i = 1; i < cap.length; i++){
+            if(cap.charAt(i) !== cap.charAt(i).toUpperCase()){
+                correct = false;
+                console.log("Not all caps")
+            }
+        }
+        correct = true;
+        for(let i = 1; i < cap.length; i++){
+            if(cap.charAt(i) !== cap.charAt(i).toLowerCase()){
+                correct = false;
+                console.log("Not sentence")
+            }
+        }
+    }
+    
+    return correct;
+}
+
+//console.log(correctCapital("Computer"));
