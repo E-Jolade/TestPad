@@ -90,3 +90,23 @@ let correctCapital = function(cap){
 }
 
 //console.log(correctCapital("Computer"));
+
+/* 2/1/24 Daily Byte Problem. Longest Common Prefix (Incomplete)*/
+
+let longestPrefix = function(s) {
+    let longest = "";
+    let prefix = [];
+    s.sort((a,b) => b.length - a.length)
+    for(let i = 0; i < s.length; i++){
+        for(let j = 0; j < s[0].length; j++){
+            prefix.push(s[i].charAt(0))
+            break;
+        }
+    }
+    
+    return prefix;
+}
+
+//console.log(longestPrefix(["color", "colorado", "cold"]));
+console.log(longestPrefix(["spot", "spotty", "spotted"]));
+//console.log(longestPrefix(["a", "b", "c"]));
