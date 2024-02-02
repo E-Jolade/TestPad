@@ -108,5 +108,26 @@ let longestPrefix = function(s) {
 }
 
 //console.log(longestPrefix(["color", "colorado", "cold"]));
-console.log(longestPrefix(["spot", "spotty", "spotted"]));
+//console.log(longestPrefix(["spot", "spotty", "spotted"]));
 //console.log(longestPrefix(["a", "b", "c"]));
+
+/* 2/2/24 Daily Byte Problem. Two Sum */
+
+let twoSum = function(a, sum){
+    let isSum = false;
+
+    for(let i = 0; i < a.length; i++){
+        for(let j = 1; j < a.length; j++){
+            if(a[i] + a[j] === sum){
+                isSum = true;
+            }
+        }
+    }
+
+    return isSum;
+}
+
+/*let k = 10;
+console.log(twoSum([1, 3, 8, 2], k))
+let kk = 8;
+console.log(twoSum([3, 9, 13, 7], kk))*/
