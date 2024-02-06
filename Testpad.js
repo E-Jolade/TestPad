@@ -131,3 +131,23 @@ let twoSum = function(a, sum){
 console.log(twoSum([1, 3, 8, 2], k))
 let kk = 8;
 console.log(twoSum([3, 9, 13, 7], kk))*/
+
+/* 2/6/24 Daily Byte Problem. Jewels and Stones*/
+
+let stonesJewels = function(jewels, stones){
+    let common = 0;
+
+    for(let i = 0; i < jewels.length; i++){
+        for(let j = 0; j < stones.length; j++){
+            if(stones.charAt(j) === jewels.charAt(i)){
+                common++;
+                break;
+            }
+        }
+    }
+
+    return common;
+}
+
+//console.log(stonesJewels("Af", "AaaddfFf"));
+//console.log(stonesJewels("AYOPD", "ayopd"));
