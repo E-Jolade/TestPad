@@ -151,3 +151,30 @@ let stonesJewels = function(jewels, stones){
 
 //console.log(stonesJewels("Af", "AaaddfFf"));
 //console.log(stonesJewels("AYOPD", "ayopd"));
+
+/* 2/7/24 Daily Byte Problem. Valid Anagram*/
+
+let isAnagram = function(s, t){
+    let anagram = []
+    for(let i = 0; i < t.length; i++){
+        anagram.push(t[i]);
+    }
+
+    for(let i = 0; i < s.length; i++){
+        for(let j = 0; j < anagram.length; j++){
+            if(s.charAt(i) === anagram[j]){
+                anagram.splice(j)
+            }
+        }
+    }
+
+    if (anagram.length === 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+/*console.log(isAnagram("cat", "tac"))
+console.log(isAnagram("program", "function"))*/
