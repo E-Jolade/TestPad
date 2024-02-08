@@ -178,3 +178,27 @@ let isAnagram = function(s, t){
 
 /*console.log(isAnagram("cat", "tac"))
 console.log(isAnagram("program", "function"))*/
+
+/* 2/8/24 Daily Byte Problem. Spot the Difference*/
+
+let spotDifference = function(s, t){
+    let diff = '';
+
+    if(s.length === t.length){
+        return diff;
+    }
+
+    for(let i = 0; i < t.length; i++){
+        for(let j = 0; j < s.length; j++){
+            if(t[i] !== s[j]){
+                diff = t[i];
+            }
+        }
+    }
+
+    return diff;
+}
+
+/*console.log(spotDifference("foobar", "barfoot"))
+console.log(spotDifference("coding", "ingcod"))
+console.log(spotDifference("ide", "idea"))*/
