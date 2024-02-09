@@ -202,3 +202,33 @@ let spotDifference = function(s, t){
 /*console.log(spotDifference("foobar", "barfoot"))
 console.log(spotDifference("coding", "ingcod"))
 console.log(spotDifference("ide", "idea"))*/
+
+/* 2/9/24 Daily Byte Problem. Intersection of Numbers*/
+
+let interSect = function(nums1, nums2){
+    let section = [];
+    let pass = false;
+
+    for(let i = 0; i < nums1.length; i++){
+        for(let j = 0; j < nums2.length; j++){
+            pass = false;
+            if(nums2[j] === nums1[i]){
+                for(let k = 0; k < section.length; k++){
+                    if(section[k] === nums2[j]){
+                        pass = true;
+                    }
+                }
+                if(pass !== true){
+                    section.push(nums2[j]);
+                    break;
+                }
+            }
+        }
+    }
+
+    return section;
+}
+
+/*console.log(interSect([2,4,4,2], [2,4]));
+console.log(interSect([1,2,3,3], [3,3]));
+console.log(interSect([2,4,6,8], [1,3,5,7]));*/
