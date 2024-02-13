@@ -232,3 +232,38 @@ let interSect = function(nums1, nums2){
 /*console.log(interSect([2,4,4,2], [2,4]));
 console.log(interSect([1,2,3,3], [3,3]));
 console.log(interSect([2,4,6,8], [1,3,5,7]));*/
+
+/* 2/13 Daily Byte Problem. Validate Characters*/
+
+let validateChars = function(s){
+    let isValid = false;
+
+    let leftSide = [];
+    for(let i = 0; i < s.length; i++){
+        if(s[i] === '(' || s[i] === '{' || s[i] === '['){
+            leftSide.push(s[i]);
+        }
+        if(s[i] === ')' || s[i] === '}' || s[i] === ']'){
+            if(leftSide[leftSide.length - 1] === '(' && s[i] === ')'){
+                leftSide.pop();
+            }
+            if(leftSide[leftSide.length - 1] === '{' && s[i] === '}'){
+                leftSide.pop();
+            }
+            if(leftSide[leftSide.length - 1] === '[' && s[i] === ']'){
+                leftSide.pop();
+            }
+        }
+    }
+
+    if(leftSide.length === 0){
+        isValid = true;
+    }
+
+    return isValid;
+    
+}
+
+/*console.log(validateChars("(){}[]"));
+console.log(validateChars("(({[]}))"));
+console.log(validateChars("{(})"));*/
