@@ -267,3 +267,37 @@ let validateChars = function(s){
 /*console.log(validateChars("(){}[]"));
 console.log(validateChars("(({[]}))"));
 console.log(validateChars("{(})"));*/
+
+/* 2/14 Daily Byte Problem. Compare Keystrokes */
+
+let compareKeystrokes = function(s, t){
+    let firstString = '';
+    let secondString = '';
+
+    for(let i = 0; i < s.length; i++){
+        firstString += s[i];
+        if(s[i] === "#"){
+            firstString = firstString.replace(/.#/, '');
+        }
+    }
+    for(let i = 0; i < t.length; i++){
+        secondString += t[i];
+        if(t[i] === "#"){
+            secondString = secondString.replace(/.#/, '');
+        }
+    }
+
+    console.log(firstString)
+    console.log(secondString)
+
+    if(firstString === secondString){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+/*console.log(compareKeystrokes("ABC#", "CD##AB"))
+console.log(compareKeystrokes("como#pur#ter", "computer"))
+console.log(compareKeystrokes("cof#dim#ng", "code")) */
