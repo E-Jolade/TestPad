@@ -301,3 +301,25 @@ let compareKeystrokes = function(s, t){
 /*console.log(compareKeystrokes("ABC#", "CD##AB"))
 console.log(compareKeystrokes("como#pur#ter", "computer"))
 console.log(compareKeystrokes("cof#dim#ng", "code")) */
+
+/* 2/15 Daily Byte Problem. Remove Adjacent Duplicates */
+
+let removeAdDupes = function(s){
+    let hasDupes = false;
+    let counter = 0;
+
+    while(counter !== s.length){
+        counter++;
+        if(s[counter - 1] === s[counter]){
+            s = s.replace(s[counter - 1], '');
+            s = s.replace(s[counter - 1], '');
+            counter = 0;
+        }
+    }
+
+    return s;
+}
+
+/*console.log(removeAdDupes("abccba"))
+console.log(removeAdDupes("foobar"))
+console.log(removeAdDupes("abccbefggfe"))*/
