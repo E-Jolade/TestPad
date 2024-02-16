@@ -323,3 +323,31 @@ let removeAdDupes = function(s){
 /*console.log(removeAdDupes("abccba"))
 console.log(removeAdDupes("foobar"))
 console.log(removeAdDupes("abccbefggfe"))*/
+
+/* 2/16 Daily Byte Problem. Greater Elements */
+
+let greaterElements = function(nums1, nums2){
+
+    let greaterNums = [];
+    let noGreater = true;
+
+    for(let i = 0; i < nums1.length; i++){
+        for(let j = 0; j < nums2.length; j++){
+            if(nums2[j] > nums1[i]){
+                greaterNums.push(nums2[j]);
+                noGreater = false;
+                break;
+            }
+        }
+        if(noGreater === true){
+            greaterNums.push(-1);
+        }
+        noGreater = true;
+    }
+
+    return greaterNums;
+}
+
+/*console.log(greaterElements([4,1,2], [1,3,4,2]))
+console.log(greaterElements([2,4], [1,2,3,4])) */
+
